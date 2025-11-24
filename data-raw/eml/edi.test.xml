@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="edi.test" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd" system="edi">
+  <access authSystem="https://pasta.edirepository.org/authentication" order="allowFirst" scope="document">
+    <allow>
+      <principal>uid=srjpe,o=EDI,dc=edirepository,dc=org</principal>
+      <permission>all</permission>
+    </allow>
+    <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+    </allow>
+  </access>
+  <dataset>
+    <title>Distribution and habitat use of juvenile steelhead and other fishes of the lower Feather River</title>
+    <creator>
+      <individualName>
+        <givenName>Ryon</givenName>
+        <surName>Kurth</surName>
+      </individualName>
+      <organizationName>California Department of Water Resources</organizationName>
+      <electronicMailAddress>Ryon.Kurth@water.ca.gov</electronicMailAddress>
+    </creator>
+    <pubDate>2025-11-21</pubDate>
+    <abstract>
+      <para>Understanding how fish presence is related to habitat features is useful in restoration planning and monitoring as better information about how fish use habitat may lead to more impactful restoration projects. The California Department of Water Resources (DWR), conducted a two-year study of microhabitat and mesohabitat in Feather River. The goal of this study was to identify relationships between habitat conditions (depth, substrate, velocity, and cover) and where juvenile Chinook salmon and steelhead occur. Snorkel surveys were conducted monthly March through August in 2001 and 2002 across 29 different sites, which were selected at random (13 in Low Flow Channel, and 16 in High Flow Channel). Each sampling section covered an area 25 meters long by 4 meters wide, running parallel to riverbank. These data were published to support the Healthy Rivers and Landscapes Science Program.</para>
+    </abstract>
+    <keywordSet>
+      <keyword>spring run</keyword>
+      <keyword>fall run</keyword>
+      <keyword>Oncorhynchus tshawytscha</keyword>
+      <keyword>California</keyword>
+      <keyword>Central Valley</keyword>
+      <keyword>chinook</keyword>
+      <keyword>Steelhead trout</keyword>
+      <keyword>microhabitat</keyword>
+      <keyword>cover</keyword>
+      <keyword>Healthy Rivers and Landscapes</keyword>
+      <keyword>tule perch</keyword>
+      <keyword>speckled dace</keyword>
+      <keyword>sacramento pikeminnow</keyword>
+    </keywordSet>
+    <intellectualRights>
+      <para>This information is released under the Creative Commons license - Attribution - CC BY (https://creativecommons.org/licenses/by/4.0/). The consumer of these data ("Data User" herein) is required to cite it appropriately in any publication that results from its use. The Data User should realize that these data may be actively used by others for ongoing research and that coordination may be necessary to prevent duplicate publication. The Data User is urged to contact the authors of these data if any questions about methodology or results occur. Where appropriate, the Data User is encouraged to consider collaboration or co-authorship with the authors. The Data User should realize that misinterpretation of data may occur if used out of context of the original study. While substantial efforts are made to ensure the accuracy of data and associated documentation, complete accuracy of data sets cannot be guaranteed. All data are made available "as is." The Data User should be aware, however, that data are updated periodically and it is the responsibility of the Data User to check for new versions of the data. The data authors and the repository where these data were obtained shall not be liable for damages resulting from any use or misinterpretation of the data. Thank you.
+</para>
+    </intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Feather River</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-121.632636</westBoundingCoordinate>
+          <eastBoundingCoordinate>-121.604633</eastBoundingCoordinate>
+          <northBoundingCoordinate>39.4621</northBoundingCoordinate>
+          <southBoundingCoordinate>39.21215</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2001-03-13</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2002-08-20</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankValue>Chinook common  Chinook ITIS  161980</taxonRankValue>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <maintenance>
+      <description>complete</description>
+    </maintenance>
+    <contact>
+      <individualName>
+        <givenName>Ryon</givenName>
+        <surName>Kurth</surName>
+      </individualName>
+      <organizationName>California Department of Water Resources</organizationName>
+      <electronicMailAddress>Ryon.Kurth@water.ca.gov</electronicMailAddress>
+    </contact>
+    <methods>
+      <methodStep>
+        <description>
+          <para>&lt;emphasis role="strong"&gt;Objectives&lt;/emphasis&gt;</para>
+          <para>
+    The objectives of this study included determining the seasonal
+    distribution of rearing juvenile salmonids and other fishes, and
+    direct and indirect effects of water temperatures, habitat, flow,
+    and interspecific interactions on juvenile salmonids.
+  </para>
+          <para>&lt;emphasis role="strong"&gt;Sampling Protocol&lt;/emphasis&gt;</para>
+          <para>
+    This study was conducted using a hierarchical sampling design where
+    the survey location represented the general location where a survey
+    was done and a survey section represented the specific area within
+    the survey location that was sampled, and finally the microhabitat
+    plot represented the specific area within the section that was
+    sampled.
+  </para>
+          <para>
+    Level 1: Location
+  </para>
+          <para>
+    Level 2: Section
+  </para>
+          <para>
+    Level 3: Microhabitat plot
+  </para>
+          <para>
+    Snorkel surveys were conducted between March and August in 2001 and
+    2002 at 29 sampling locations selected at random (13 in Low Flow
+    Channel, 16 in High Flow Channel). Each section covered an area of
+    25 meters long and four meters wide and ran parallel to one
+    riverbank. Two divers surveyed the reach by swimming upstream and
+    marking the location of fish observations and the number, species
+    and size of the fish observed. The divers would then measure water
+    depth, average velocity, substrate, cover, and habitat types at 36
+    points (e.g. the microhabitat plot), each representing one square
+    meter within the reach. The divers also returned to the locations
+    where fish were observed and measured depth and focal velocity
+    associated with each fish observation. Water temperature was
+    continuously monitored through a network of StowAway electronic
+    thermistors. 
+  </para>
+          <para>&lt;emphasis role="strong"&gt;Caveats&lt;/emphasis&gt;</para>
+          <para>
+    Coordinates were not recorded for every survey section. Coordinates
+    were obtained using a handheld GPS unit with a measurement error of
+    about 20 meters. Coordinates were not consistently recorded at the
+    top or bottom of a survey section. Coordinates were not obtained for
+    each microhabitat plot as the measurement error was too large.
+  </para>
+          <para>
+    In order, to fill in missing coordinates for survey sections we
+    relied on location information at the next level up in the
+    hierarchy, the survey location. Survey location names were not
+    standardized and were cleaned to group all locations with common
+    names. For survey sections that were missing coordinates or had
+    assumed incorrect coordinates (located outside of the river or
+    inconsistent coordinate and location name), a random coordinate from
+    the appropriate survey location was selected. Coordinates that were
+    filled in using this method are labelled in the dataset.
+  </para>
+        </description>
+      </methodStep>
+    </methods>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit id="number of divers" multiplierToSI="" name="number of divers" parentSI="" unitType="dimensionless">
+          <description>number of divers</description>
+        </unit>
+        <unit id="river mile" multiplierToSI="" name="river mile" parentSI="" unitType="dimensionless">
+          <description>river mile</description>
+        </unit>
+        <unit id="decimal degrees dimensionless" multiplierToSI="decimal degrees" name="decimal degrees dimensionless" parentSI="" unitType="">
+          <description/>
+        </unit>
+        <unit id="count of fish" multiplierToSI="" name="count of fish" parentSI="" unitType="dimensionless">
+          <description>count of fish</description>
+        </unit>
+        <unit id="NTU" multiplierToSI="" name="NTU" parentSI="" unitType="dimensionless">
+          <description>NTU</description>
+        </unit>
+        <unit id="count" multiplierToSI="" name="count" parentSI="" unitType="dimensionless">
+          <description>count</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+  <additionalMetadata>
+    <metadata>
+      <emlEditor>
+        <app>EMLassemblyline</app>
+        <release>3.6.0</release>
+      </emlEditor>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>

@@ -1,0 +1,7 @@
+id	unitType	parentSI	multiplierToSI	description
+number of divers	dimensionless	NA	NA	number of divers
+river mile	dimensionless	NA	NA	river mile
+decimal degrees dimensionless	NA	NA	decimal degrees
+count of fish	dimensionless	NA	NA	count of fish
+NTU	dimensionless	NA	NA	NTU
+count	dimensionless	NA	NA	count

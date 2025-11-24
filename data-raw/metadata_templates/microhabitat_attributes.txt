@@ -1,0 +1,29 @@
+attributeName	attributeDefinition	class	unit	dateTimeFormatString	missingValueCode	missingValueCodeExplanation
+micro_hab_data_tbl_id	Identification number of microhabitat data table representing unique observation of 1m2 plot within the survey location.	character	NA	NA	NA	Not applicable
+location_table_id	Identification number of survey location table representing unique survey associated with the microhabitat observation	character	NA	NA	NA	Not applicable
+transect_code	Code to identify specific one-meter transect surveyed within the survey location (see attached map)	character	NA	NA	NA	Not applicable
+fish_data_id	Unique identifier number for fish observations. This field only exists for fish observations.	character	NA	NA	NA	Not applicable
+date	Date mini snorkel data was collected	Date	NA	YYYY-MM-DD	NA	Not applicable
+count	Number of fish observed	numeric	count of fish	NA	NA	Not applicable
+species	Fish species	character	NA	NA	NA	Not applicable
+fl_mm	Fork length of fish (mm) based on visual observation	numeric	millimeter	NA	NA	Not applicable
+dist_to_bottom	Measurement of distance to bottom where fish observation was observed	numeric	meter	NA	NA	Not applicable
+depth	Depth of water in meters at the centerpoint of the plot	numeric	meter	NA	NA	Not applicable
+focal_velocity	Velocity specific to where fish was observed	numeric	feetPerSecond	NA	NA	Not applicable
+velocity	Measured stream velocity (ft/s) at the centerpoint of the plot	numeric	feetPerSecond	NA	NA	Not applicable
+surface_turbidity	Turbidity measured within microhabitat plot	numeric	NTU	NA	NA	Not applicable
+percent_fine_substrate	Percentage of  fine substrate within microhabitat plot (less than 0.05mm)	numeric	percent	NA	NA	Not applicable
+percent_sand_substrate	Percentage of  sand substrate within microhabitat plot (0.05-2mm)	numeric	percent	NA	NA	Not applicable
+percent_small_gravel_substrate	Percentage of small gravel substrate within microhabitat plot (2-50mm)	numeric	percent	NA	NA	Not applicable
+percent_large_gravel_substrate	Percentage of large gravel substrate within microhabitat plot (50-150mm)	numeric	percent	NA	NA	Not applicable
+percent_cobble_substrate	Percentage of cobble substrate within microhabitat plot (150-300mm)	numeric	percent	NA	NA	Not applicable
+percent_boulder_substrate	Percentage of boulder substrate within microhabitat plot (greater than 300mm)	numeric	percent	NA	NA	Not applicable
+percent_no_cover_inchannel	Percentage of where there is no cover within microhabitat plot	numeric	percent	NA	NA	Not applicable
+percent_small_woody_cover_inchannel	Percentage of small woody cover within microhabitat plot. Small wood is generally considered to be less than 10 cm diameter at breast height.	numeric	percent	NA	NA	Not applicable
+percent_large_woody_cover_inchannel	Percentage of large woody cover within microhabitat plot. Large wood is generally considered to be more than 10 cm at breat height and consists of tree trunks or a large branch.	numeric	percent	NA	NA	Not applicable
+percent_submerged_aquatic_veg_inchannel	Percentage of submerged aquatic vegetation cover within microhabitat plot	numeric	percent	NA	NA	Not applicable
+percent_undercut_bank	Percentageof undercut bank cover within microhabitat plot	numeric	percent	NA	NA	Not applicable
+percent_no_cover_overhead	Percentage where there is no overhead cover within microhabitat plot	numeric	percent	NA	NA	Not applicable
+percent_cover_half_meter_overhead	Percentage of overhead cover half a meter within microhabitat plot	numeric	percent	NA	NA	Not applicable
+percent_cover_more_than_half_meter_overhead	Percentage of overhead cover more than half a meter above microhabitat plot	numeric	percent	NA	NA	Not applicable
+channel_geomorphic_unit	Geomorphic features of stream designated through visual observation. Features include = c("glide", "glide margin", "pool", "riffle", "riffle margin", "backwater"). A glide is characterized by its smooth, uniform flow and relatively shallow depth. A riffle is a shallow section where the flow of water is faster and more turbulent. A pool is characterized by deeper depth, slower flow, and relatively calm water. A backwater area is characterized by stagnant or slow-moving water often found in area where the main flow is obstructed. Riffle or glide margins are transitions between these geomorphic units.	character	NA	NA	NA	Not applicable
