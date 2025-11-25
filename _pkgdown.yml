@@ -1,0 +1,25 @@
+title: hrlpub
+url: https://FlowWest.github.io/hrlpub/
+template:
+  bootswatch: flatly
+
+home:
+  links:
+  - text: Healthy Rivers & Landscapes Website
+    href: https://resources.ca.gov/Initiatives/Voluntary-Agreements-Page
+
+navbar:
+  structure:
+    left:  [home, reference]
+    right: [github]
+  type: default
+  left:
+  - text: 'Reference'
+    href: reference/index.html
+  - text: 'News'
+    href: news/index.html
+
+repo:
+ url:
+  home: https://github.com/FlowWest/hrlpub
+  issue: https://github.com/FlowWest/hrlpub/issues/
