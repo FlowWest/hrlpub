@@ -48,7 +48,7 @@ facilitate the creation of an EML document
 }
 \details{
 This function assumes that all appropriate metadata templates have been completed
-Check that the following files in metadata_templates have been manually filled
+Check that the following files in publish/metadata_templates have been manually filled
 in and are correct and generate any additional files as needed:
 abstract.txt
 attributes_csv_templates/attributes_csv_template.csv (one per data table)

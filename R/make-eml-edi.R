@@ -36,7 +36,7 @@
 #' @details
 #'
 #' This function assumes that all appropriate metadata templates have been completed
-#' Check that the following files in metadata_templates have been manually filled
+#' Check that the following files in publish/metadata_templates have been manually filled
 #' in and are correct and generate any additional files as needed:
 #' abstract.txt
 #' attributes_csv_templates/attributes_csv_template.csv (one per data table)
@@ -92,9 +92,9 @@ make_eml_edi <- function(data_file_names,
 
   # Define paths for your metadata templates, data, and EML
 
-  path_templates <- here("data-raw", "metadata_templates")
-  path_data <- here("data-raw", "data_objects")
-  path_eml <- here("data-raw", "eml")
+  path_templates <- here("publish", "metadata_templates")
+  path_data <- here("data", "clean")
+  path_eml <- here("publish", "eml")
 
   # Read in your data file to find the start and end dates for temporal coverage
 
