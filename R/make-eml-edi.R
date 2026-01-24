@@ -41,6 +41,7 @@
 #' abstract.txt
 #' attributes_csv_templates/attributes_csv_template.csv (one per data table)
 #' custom_units.txt
+#' geographic_coverage.txt
 #' intellectual_rights.txt (DO NOT CHANGE unless using another license)
 #' keywords.txt
 #' methods.docx
@@ -55,8 +56,6 @@
 #' make_eml_edi(data_file_names = c("microhabitat_observations.csv","survey_locations.csv"),
 #'              attributes_file_names = c("attributes_microhabitat_observations.csv","attributes_survey_locations.csv"),
 #'              title = "Distribution and habitat use of juvenile steelhead and other fishes of the lower Feather River",
-#'              #geography = "Feather River",
-#'              #coordinates = c("39.4621", "-121.604633", "39.21215", "-121.632636"),
 #'              maintenance = "complete",
 #'              edi_number = "edi.test")
 #'
@@ -64,8 +63,6 @@
 make_eml_edi <- function(data_file_names,
                               attributes_file_names,
                               title,
-                              #geography,
-                              #coordinates,
                               maintenance,
                               edi_number) {
   if (missing(data_file_names)) {
@@ -77,12 +74,7 @@ make_eml_edi <- function(data_file_names,
   if (missing(title)) {
     stop("The 'title' argument is required.", call. = FALSE)
   }
-  # if (missing(geography)) {
-  #   stop("The 'geography' argument is required.", call. = FALSE)
-  # }
-  # if (missing(coordinates)) {
-  #   stop("The 'coordinates' argument is required.", call. = FALSE)
-  # }
+
   if (missing(maintenance)) {
     stop("The 'maintenance' argument is required.", call. = FALSE)
   }
@@ -158,8 +150,6 @@ make_eml_edi <- function(data_file_names,
     eml.path = path_eml,
     dataset.title = title,
     temporal.coverage = c(start_date, end_date),
-    # geographic.description = geography,
-    # geographic.coordinates = coordinates,
     maintenance.description = maintenance,
     data.table = data_file_names,
     user.id = Sys.getenv("EDI_USER_ID"),
