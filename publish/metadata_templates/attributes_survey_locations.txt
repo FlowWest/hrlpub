@@ -1,0 +1,17 @@
+attributeName	attributeDefinition	class	unit	dateTimeFormatString	missingValueCode	missingValueCodeExplanation
+location_table_id	Identification number of survey location table representing a unique survey	character	NA	NA	NA	Not applicable
+date	Date snorkel data was collected	Date	NA	YYYY-MM-DD	NA	Not applicable
+location	Location where mini snorkel data was collected.	character	NA	NA	NA	Not applicable
+water_temp	Temperature of water in degrees Fahrenheit measured continuously with StowAway electronic thermistors	numeric	fahrenheit	NA	NA	Not applicable
+weather	Weather conditions during survey.	character	NA	NA	NA	Not applicable
+river_mile	River mile where survey was conducted. River mile was based on observation of surveyors when collecting data.	numeric	river mile	NA	NA	Not applicable
+flow	Flow in cfs	numeric	cubicFeetPerSecond	NA	NA	Not applicable
+number_of_divers	Number of divers during mini-snorkel survey	numeric	number of divers	NA	NA	Not applicable
+reach_length	Survey reach length	numeric	meter	NA	NA	Not applicable
+reach_width	Survey reach width	numeric	meter	NA	NA	Not applicable
+channel_width	Width of channel at water line which may vary and is dependent on discharge.	numeric	meter	NA	NA	Not applicable
+channel_type	Feather River channel type where survey was conducted.	character	NA	NA	NA	Not applicable
+longitude	Longitude of the survey location reported in decimal degress	numeric	decimal degrees	NA	NA	Not applicable
+latitude	Latitude of the survey location reported in decimal degress	numeric	decimal degrees	NA	NA	Not applicable
+channel_location	Section of the Feather River where data were collected. HFC stands for High Flow Channel (below the Thermalito Afterbay outlet). LFC stands for Low Flow Channel (between Oroville Dam and the Thermalito Afterbay outlet)	character	NA	NA	NA	Not applicable
+coordinate_method	Description of the method used to assign latitude and longitude. Coordinates were not reported for all survey locations. Those that were reported are labelled as reported in database. For those that were missing or were determined to be incorrect, a coordinate from a location with the same name was selected at random and are labelled as assigned based on similar location. Location information was collected while in the field using a handheld unit. These units are known to have measurement error of plus or minus 20 meters. Coordinates were not consistently collected at the start or end of the survey transect meaning another 25 feet (length of transect) should be added to this range. For those where a proxy location was used, the range of error is much greater and can be assumed to be anywhere within the general location.	character	NA	NA	NA	Not applicable

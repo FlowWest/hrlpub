@@ -6,8 +6,8 @@ Imports:
     EMLassemblyline,
     EMLaide
 Remotes:
-    EMLassemblyline = github::EDIorg/EMLassemblyline,
-    EMLaide = github::FlowWest/EMLaide
+    EDIorg/EMLassemblyline,
+    FlowWest/EMLaide
 Authors@R: c(person("Lucy", "Andrews", email = "lucy.andrews@dwr.org", role = c("aut", "cre")),
              person("Ashley", "Vizek", email = "avizek@flowwest.com", role = c("aut"))
             )
