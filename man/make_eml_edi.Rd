@@ -30,11 +30,6 @@ is to update an existing package, the number for the next version should be inpu
 For instance, if the existing EDI package is `edi.1234.1` then the you should
 input `edi.1234.2` because you are creating the EML for the next version.
 If this is for a new package, please reserve a new EDI number. INSERT SEE DOCUMENTATION.}
-
-\item{geography}{Description of the geography. For instance, "Feather River"}
-
-\item{coordinates}{These are the bounding coordinates entered as: North bounding,
-East bounding, South bounding, West bounding.}
 }
 \value{
 An EML file within `data-raw/eml`. EMLassemblyline will include messages
@@ -51,6 +46,7 @@ in and are correct and generate any additional files as needed:
 abstract.txt
 attributes_csv_templates/attributes_csv_template.csv (one per data table)
 custom_units.txt
+geographic_coverage.txt
 intellectual_rights.txt (DO NOT CHANGE unless using another license)
 keywords.txt
 methods.docx
@@ -64,8 +60,6 @@ are stored in their .Renviron as EDI_USER_ID
 make_eml_edi(data_file_names = c("microhabitat_observations.csv","survey_locations.csv"),
              attributes_file_names = c("attributes_microhabitat_observations.csv","attributes_survey_locations.csv"),
              title = "Distribution and habitat use of juvenile steelhead and other fishes of the lower Feather River",
-             #geography = "Feather River",
-             #coordinates = c("39.4621", "-121.604633", "39.21215", "-121.632636"),
              maintenance = "complete",
              edi_number = "edi.test")
 

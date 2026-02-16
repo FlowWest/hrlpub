@@ -16,11 +16,6 @@
 #' @param title Title of the data publication. The title should be clear, concise,
 #' and descriptive.
 #'
-#' @param geography Description of the geography. For instance, "Feather River"
-#'
-#' @param coordinates These are the bounding coordinates entered as: North bounding,
-#' East bounding, South bounding, West bounding.
-#'
 #' @param maintenance This describes how often the data publication will be updated.
 #' The options are: daily, weekly, monthly, annually, complete.
 #'
