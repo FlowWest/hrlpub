@@ -14,3 +14,7 @@ generate_qc_report(qc_results, output_file = NULL)
 \description{
 Generate QC Report
 }
+\examples{
+report <- generate_qc_report(qc)
+
+}

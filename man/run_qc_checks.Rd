@@ -7,17 +7,35 @@
 run_qc_checks(data, data_type, ...)
 }
 \arguments{
-\item{data}{Data frame containing the data to check}
+\item{data}{Data frame containing the data to check. Requires specific column names.
+Water quality: datetime, parameter, value, site_id; Fish observation: date, site_id, species, count (optional),
+fork_length (optional), weight (optional), observer (optional); Carcass survey: date, site_id, survey_period,
+carcass_id, condition, sex, fork_length, marked; RST catch: date, trap_id, species, life_stage, count,
+hours_fished (optional); Invertebrate: date, site_id, sample_id, taxon, count; Habitat: date, site_id, transect_id,
+depth, velocity, substrate (optional); Chemistry: analyte, result, units,
+sample_id (optional), date (optional), site_id (optional),
+mdl (optional), pql (optional), lab_qc_type (optional),
+detected (optional - TRUE/FALSE for detection status)}
 
 \item{data_type}{Character string specifying data type:
-"water_quality", "fish_count", "fish_measurement", "carcass_survey",
+"water_quality", "fish_observation", "carcass_survey",
 "rst_catch", "invertebrate", "habitat", "chemistry"}
 
 \item{...}{Additional arguments passed to specific QC functions}
 }
 \value{
-List containing QC results, flags, and summary statistics
+List containing QC results, flags, and summary statistics and plots for water quality data.
 }
 \description{
 Dispatch function that triggers additional functions based on data type.
+}
+\examples{
+fish_data <- read_csv("data/clean/microhabitat_observations.csv")
+fish_data_format <- fish_data |>
+    select(date, species, micro_hab_data_tbl_id, count) |>
+    rename(site_id = micro_hab_data_tbl_id) |>
+    filter(count > 0)
+qc <- run_qc_checks(fish_data_format, "fish_observation")
+qc$flags |> View()
+
 }

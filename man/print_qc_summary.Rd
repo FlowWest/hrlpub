@@ -12,3 +12,7 @@ print_qc_summary(qc_results)
 \description{
 Print QC Summary
 }
+\examples{
+print_qc_summary(qc)
+
+}
