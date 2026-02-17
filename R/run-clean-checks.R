@@ -34,7 +34,7 @@
 
 run_clean_checks <- function(data,
                              dataset_name,
-                             diagnostics_dir = "diagnostics",
+                             diagnostics_dir = "data/clean/diagnostics",
                              negative_cols = NULL,
                              percent_cols = NULL,
                              custom_checks = NULL,
@@ -310,6 +310,12 @@ run_clean_checks <- function(data,
 
 
 # Helper functions -------------------------------------------------------------
+#' @title Log info message
+#' @description Prints a message to the console only when verbose is TRUE
+#' @param ... Message components passed to message()
+#' @param verbose Logical, if TRUE the message is printed (default: FALSE)
+#' @return NULL invisibly
+#' @export
 # Print a message only when verbose is TRUE
 log_info <- function(..., verbose = F) {
   if (isTRUE(verbose)) {
@@ -317,6 +323,13 @@ log_info <- function(..., verbose = F) {
   }
 }
 
+#' @title Print a labeled table
+#' @description Prints a label and a table to the console only when verbose is TRUE
+#' @param label Character string label to print above the table
+#' @param x Object to print (typically a data frame)
+#' @param verbose Logical, if TRUE the label and table are printed (default: FALSE)
+#' @return NULL invisibly
+#' @export
 # Print a label and a table only when verbose is TRUE
 print_table <- function(label, x, verbose = F) {
   if (isTRUE(verbose)) {
@@ -325,6 +338,17 @@ print_table <- function(label, x, verbose = F) {
   }
 }
 
+#' @title Log a data issue
+#' @description Creates a one-row tibble recording a data quality issue, its
+#'   prevalence, and the action taken. Intended to be accumulated into an issue
+#'   log via dplyr::bind_rows()
+#' @param issue Character string identifying the issue (e.g. "temperature_negative")
+#' @param rows_affected Integer number of rows affected by the issue
+#' @param action Character string describing the action taken (e.g. "Negative values set to NA")
+#' @param n_total Integer total number of rows in the dataset, used to calculate prevalence
+#' @param details_path Character path to the CSV file containing affected row details (default: NA)
+#' @return A one-row tibble with columns: issue, rows_affected, prevalence, action, details_path
+#' @export
 # Log an issue row with prevalence calculated from total dataframe rows (n_total) in this script
 log_issue <- function(issue, rows_affected, action, n_total, details_path = NA_character_) {
   tibble::tibble(
