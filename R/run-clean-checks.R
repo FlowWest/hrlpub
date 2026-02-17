@@ -3,6 +3,7 @@
 #' @title Run basic data cleaning checks
 #' @description Main dispatch function to run multiple cleaning operations on a dataset
 #' currently including a function to check for negative values and percent ranges.
+#' The functionality to add other checks exists by using a custom function.
 #' @param data Data frame to clean
 #' @param dataset_name Name of dataset (for logging and file naming)
 #' @param diagnostics_dir Directory to save diagnostic CSV files (created if doesn't exist)
@@ -354,6 +355,9 @@ format_elapsed <- function(start_time) {
 #' @param dataset_name Name of dataset (for diagnostic file naming)
 #' @param diagnostics_dir Directory to save diagnostic CSV files
 #' @param issue_log Existing issue log to append to
+#' @param n_total This is passed from the dispatch function.
+#' @param verbose Logical, print detailed progress messages (default: FALSE).
+#' Passed from the dispatch function.
 #' @return List with cleaned data, updated issue log, and negative value details
 #' @export
 
@@ -429,6 +433,9 @@ clean_negative_values <- function(data, cols, dataset_name, diagnostics_dir, iss
 #' @param dataset_name Name of dataset (for diagnostic file naming)
 #' @param diagnostics_dir Directory to save diagnostic CSV files
 #' @param issue_log Existing issue log to append to
+#' @param n_total This is passed from the dispatch function.
+#' @param verbose Logical, print detailed progress messages (default: FALSE).
+#' Passed from the dispatch function.
 #' @return List with cleaned data, updated issue log, and percent range details
 #' @export
 
