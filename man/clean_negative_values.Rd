@@ -24,6 +24,11 @@ clean_negative_values(
 \item{diagnostics_dir}{Directory to save diagnostic CSV files}
 
 \item{issue_log}{Existing issue log to append to}
+
+\item{n_total}{This is passed from the dispatch function.}
+
+\item{verbose}{Logical, print detailed progress messages (default: FALSE).
+Passed from the dispatch function.}
 }
 \value{
 List with cleaned data, updated issue log, and negative value details

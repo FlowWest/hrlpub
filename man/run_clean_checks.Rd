@@ -7,7 +7,7 @@
 run_clean_checks(
   data,
   dataset_name,
-  diagnostics_dir = "diagnostics",
+  diagnostics_dir = "data/clean/diagnostics",
   negative_cols = NULL,
   percent_cols = NULL,
   custom_checks = NULL,
@@ -35,6 +35,7 @@ List with cleaned data, issue log, and all diagnostic details
 \description{
 Main dispatch function to run multiple cleaning operations on a dataset
 currently including a function to check for negative values and percent ranges.
+The functionality to add other checks exists by using a custom function.
 }
 \examples{
 # Basic usage
