@@ -1,29 +1,30 @@
 
 #' Make metadata XML required for EDI data publication
 #'
-#' This is a wrapper function and utilizes the package EMLassemblyline to
+#' This is a wrapper function and utilizes the package [EMLassemblyline](https://ediorg.github.io/EMLassemblyline/) to
 #' facilitate the creation of an EML document
 #' @import here
 #' @import readr
 #' @import purrr
 #' @import dplyr
 #' @param data_file_names A list of file names for data tables to be included in
-#' the publication. For instance, "catch.csv" or c("catch.csv", "trap.csv")
+#' the publication. For instance, `"catch.csv"` or `c("catch.csv", "trap.csv")`
 #'
 #' @param attributes_file_names A list of file names for the attributes metadata
-#' csv templates. The naming convention for the files should be "attributes_NAME_OF_DATA_TABLE.csv"
+#' csv templates. The naming convention for the files should be `attributes_NAME_OF_DATA_TABLE.csv`
 #'
 #' @param title Title of the data publication. The title should be clear, concise,
 #' and descriptive.
 #'
 #' @param maintenance This describes how often the data publication will be updated.
-#' The options are: daily, weekly, monthly, annually, complete.
+#' The options are: `daily`, `weekly`, `monthly`, `annually`, `complete`.
 #'
 #' @param edi_number The EDI number to be used for the data publication. If the EML
-#' is to update an existing package, the number for the next version should be input.
+#' is generated to update an existing package, the number for the next version should be the input.
 #' For instance, if the existing EDI package is `edi.1234.1` then the you should
 #' input `edi.1234.2` because you are creating the EML for the next version.
-#' If this is for a new package, please reserve a new EDI number. INSERT SEE DOCUMENTATION.
+#' If this is for a new package, please reserve a new EDI number. Refer to the
+#' [Quickstart Guide](https://lucy-dwr.github.io/hrl-docs/quickstart/publish-to-edi.html).
 #'
 #' @return An EML file within `data-raw/eml`. EMLassemblyline will include messages
 #' to ensure the EML file validates and will also flag any issues.
@@ -31,7 +32,7 @@
 #' @details
 #'
 #' This function assumes that all appropriate metadata templates have been completed
-#' Check that the following files in publish/metadata_templates have been manually filled
+#' Check that the following files in `publish/metadata_templates` have been manually filled
 #' in and are correct and generate any additional files as needed:
 #' abstract.txt
 #' attributes_csv_templates/attributes_csv_template.csv (one per data table)
@@ -47,12 +48,13 @@
 #'
 #'
 #' @examples
-#'
+#' \dontrun{
 #' make_eml_edi(data_file_names = c("microhabitat_observations.csv","survey_locations.csv"),
 #'              attributes_file_names = c("attributes_microhabitat_observations.csv","attributes_survey_locations.csv"),
 #'              title = "Distribution and habitat use of juvenile steelhead and other fishes of the lower Feather River",
 #'              maintenance = "complete",
 #'              edi_number = "edi.test")
+#'}
 #'
 #' @export
 make_eml_edi <- function(data_file_names,

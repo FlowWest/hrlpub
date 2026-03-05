@@ -33,6 +33,7 @@ library(tidyr)
 #' @param ... Additional arguments passed to specific QC functions
 #' @return List containing QC results, flags, and summary statistics and plots for water quality data.
 #' @examples
+#' \dontrun{
 #' fish_data <- read_csv("data/clean/microhabitat_observations.csv")
 #' fish_data_format <- fish_data |>
 #'     select(date, species, micro_hab_data_tbl_id, count) |>
@@ -40,7 +41,7 @@ library(tidyr)
 #'     filter(count > 0)
 #' qc <- run_qc_checks(fish_data_format, "fish_observation")
 #' qc$flags |> View()
-#'
+#'}
 #' @export
 
 run_qc_checks <- function(data, data_type, ...) {

@@ -34,10 +34,11 @@ List with cleaned data, issue log, and all diagnostic details
 }
 \description{
 Main dispatch function to run multiple cleaning operations on a dataset
-currently including a function to check for negative values and percent ranges.
+This currently includes a function to check for negative values and percent ranges.
 The functionality to add other checks exists by using a custom function.
 }
 \examples{
+\dontrun{
 # Basic usage
 result <- run_clean_checks(
   data = my_data,
@@ -54,4 +55,5 @@ print(result$issue_log)
 
 # Save issue log
 write.csv(result$issue_log, "cleaning_log.csv", row.names = FALSE)
+}
 }

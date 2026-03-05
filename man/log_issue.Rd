@@ -22,6 +22,6 @@ A one-row tibble with columns: issue, rows_affected, prevalence, action, details
 }
 \description{
 Creates a one-row tibble recording a data quality issue, its
-  prevalence, and the action taken. Intended to be accumulated into an issue
-  log via dplyr::bind_rows()
+prevalence, and the action taken. Intended to be accumulated into an issue
+log via dplyr::bind_rows()
 }

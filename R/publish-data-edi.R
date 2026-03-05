@@ -1,17 +1,17 @@
 
 #' Publish data package on EDI
 #'
-#' This is a wrapper function and utilizes the package EMLaide to send an API
+#' This is a wrapper function and utilizes the package [EMLaide](https://github.com/FlowWest/EMLaide) to send an API
 #' request to EDI.
 #'
 #' This function assumes that `make_eml_edi` was used to create an EML metadata
-#' document and that the file structure follows the documentation. INSERT link.
+#' document and that the file structure follows the documentation. [make_eml_edi()].
 #'
 #' This function also assumes that the user has an EDI account and credentials
 #' are stored in their .Renviron as EDI_USER_ID and EDI_PASSWORD
 
 #' @param publish_type Indicate whether you are publishing an update to an existing
-#' package or publishing a new data package. Option are: "new", "update"
+#' package or publishing a new data package. Option are: `new`, `update`
 #'
 #' @param edi_number EDI number of the data package being published. This should
 #' match the EDI number in the EML document. If you are updating an existing package
@@ -19,7 +19,7 @@
 #'
 #' @param publish_environment Environment where data are being published. Recommended to
 #' publish on the staging environment first to review the data package and then
-#' publish to production. Option are: "staging", "production"
+#' publish to production. Option are: `staging`, `production`
 #'
 #' @return A message describing if the upload was successful or not.
 #'
