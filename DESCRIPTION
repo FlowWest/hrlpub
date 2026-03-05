@@ -4,7 +4,7 @@ Title: Data publication functions
 Version: 0.1.0
 Imports: 
     EMLassemblyline,
-    EMLaide
+    EMLaide,
     dplyr,
     here,
     purrr,
