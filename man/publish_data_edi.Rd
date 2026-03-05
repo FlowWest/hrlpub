@@ -8,7 +8,7 @@ publish_data_edi(path_eml_file, publish_type, edi_number, publish_environment)
 }
 \arguments{
 \item{publish_type}{Indicate whether you are publishing an update to an existing
-package or publishing a new data package. Option are: "new", "update"}
+package or publishing a new data package. Option are: \code{new}, \code{update}}
 
 \item{edi_number}{EDI number of the data package being published. This should
 match the EDI number in the EML document. If you are updating an existing package
@@ -16,18 +16,18 @@ the EDI number will be one version greater than the existing package.}
 
 \item{publish_environment}{Environment where data are being published. Recommended to
 publish on the staging environment first to review the data package and then
-publish to production. Option are: "staging", "production"}
+publish to production. Option are: \code{staging}, \code{production}}
 }
 \value{
 A message describing if the upload was successful or not.
 }
 \description{
-This is a wrapper function and utilizes the package EMLaide to send an API
+This is a wrapper function and utilizes the package \href{https://github.com/FlowWest/EMLaide}{EMLaide} to send an API
 request to EDI.
 }
 \details{
-This function assumes that `make_eml_edi` was used to create an EML metadata
-document and that the file structure follows the documentation. INSERT link.
+This function assumes that \code{make_eml_edi} was used to create an EML metadata
+document and that the file structure follows the documentation. \code{\link[=make_eml_edi]{make_eml_edi()}}.
 
 This function also assumes that the user has an EDI account and credentials
 are stored in their .Renviron as EDI_USER_ID and EDI_PASSWORD

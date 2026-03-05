@@ -2,7 +2,7 @@
 
 #' @title Run basic data cleaning checks
 #' @description Main dispatch function to run multiple cleaning operations on a dataset
-#' currently including a function to check for negative values and percent ranges.
+#' This currently includes a function to check for negative values and percent ranges.
 #' The functionality to add other checks exists by using a custom function.
 #' @param data Data frame to clean
 #' @param dataset_name Name of dataset (for logging and file naming)
@@ -15,6 +15,7 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # Basic usage
 #' result <- run_clean_checks(
 #'   data = my_data,
@@ -31,6 +32,7 @@
 #'
 #' # Save issue log
 #' write.csv(result$issue_log, "cleaning_log.csv", row.names = FALSE)
+#' }
 
 run_clean_checks <- function(data,
                              dataset_name,

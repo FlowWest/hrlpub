@@ -30,6 +30,7 @@ List containing QC results, flags, and summary statistics and plots for water qu
 Dispatch function that triggers additional functions based on data type.
 }
 \examples{
+\dontrun{
 fish_data <- read_csv("data/clean/microhabitat_observations.csv")
 fish_data_format <- fish_data |>
     select(date, species, micro_hab_data_tbl_id, count) |>
@@ -37,5 +38,5 @@ fish_data_format <- fish_data |>
     filter(count > 0)
 qc <- run_qc_checks(fish_data_format, "fish_observation")
 qc$flags |> View()
-
+}
 }

@@ -1,12 +1,52 @@
 title: hrlpub
 url: https://FlowWest.github.io/hrlpub/
 template:
-  bootswatch: flatly
+  includes:
+    in_header: |
+      <link rel="stylesheet" href="extra.css">
 
 home:
   links:
   - text: Healthy Rivers & Landscapes Website
     href: https://resources.ca.gov/Initiatives/Voluntary-Agreements-Page
+
+reference:
+- title: Main functions
+  desc: The main functions that will be utilized. Some are utility functions that call on other functions in this package or other packages.
+  contents:
+  - make_eml_edi
+  - publish_data_edi
+  - run_clean_checks
+  - run_qc_checks
+- title: Specific QC functions
+  desc: Functions that check data structure or quality that are called in run_clean_checks or run_qc_checks.
+  contents:
+  - check_condition_factor
+  - check_do_saturation
+  - check_flat_line
+  - check_interobserver_agreement
+  - check_range
+  - check_rate_of_change
+  - check_sensor_drift
+  - clean_negative_values
+  - clean_percent_ranges
+  - qc_carcass_survey
+  - qc_chemistry
+  - qc_fish_observation
+  - qc_habitat
+  - qc_invertebrate
+  - qc_rst_catch
+  - qc_water_quality
+- title: Helper functions
+  desc: Functions to help generate output
+  contents:
+  - append_flag_reason
+  - format_elapsed
+  - generate_qc_report
+  - log_info
+  - log_issue
+  - print_qc_summary
+  - print_table
 
 navbar:
   structure:
@@ -16,8 +56,6 @@ navbar:
   left:
   - text: 'Reference'
     href: reference/index.html
-  - text: 'News'
-    href: news/index.html
 
 repo:
  url:
