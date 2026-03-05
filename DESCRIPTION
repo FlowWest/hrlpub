@@ -5,6 +5,10 @@ Version: 0.1.0
 Imports: 
     EMLassemblyline,
     EMLaide
+    dplyr,
+    here,
+    purrr,
+    readr
 Remotes:
     EDIorg/EMLassemblyline,
     FlowWest/EMLaide
