@@ -1,0 +1,204 @@
+/* ===============================
+   DWR Custom Styles for pkgdown
+   Place this file at: pkgdown/extra.css
+   =============================== */
+
+/* ------- Color Variables ------- */
+:root {
+  --dwr-navy:        #0C425C;
+  --dwr-blue-dark:   #052C3A;
+  --dwr-blue:        #2E7DA1;
+  --dwr-blue-light:  #D2EAF4;
+  --dwr-gold:        #F2C94C;
+  --dwr-amber:       #D89A28;
+  --dwr-gold-light:  #FAE9A4;
+  --dwr-green-dark:  #2E6E3D;
+  --dwr-green:       #76A57C;
+  --dwr-green-light: #C4D8C6;
+  --dwr-charcoal:    #333333;
+  --dwr-grey:        #777777;
+  --dwr-grey-light:  #DADADA;
+  --dwr-bg:          #F7F7F7;
+  --dwr-white:       #FFFFFF;
+}
+
+/* ===============================
+   Global
+   =============================== */
+
+body {
+  color: var(--dwr-charcoal);
+  background-color: var(--dwr-white);
+}
+
+/* ===============================
+   Links
+   =============================== */
+
+a {
+  color: var(--dwr-navy);
+}
+
+a:hover {
+  color: var(--dwr-blue);
+}
+
+/* ===============================
+   Headings
+   =============================== */
+
+.contents h1,
+.page-header h1 {
+  color: var(--dwr-green-dark);
+}
+
+.contents h2 {
+  color: var(--dwr-green-dark);
+}
+
+.contents h3 {
+  color: var(--dwr-green);
+}
+
+.contents h4 {
+  color: var(--dwr-green);
+}
+
+/* ===============================
+   Navbar
+   =============================== */
+
+.navbar {
+  background-color: var(--dwr-blue-dark) !important;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .navbar-text {
+  color: #fff !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: var(--dwr-gold) !important;
+}
+
+/* Package version in navbar */
+.navbar .version {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* ===============================
+   Footer
+   =============================== */
+
+footer a,
+.pkgdown-footer a {
+  color: var(--dwr-navy);
+}
+
+footer a:hover,
+.pkgdown-footer a:hover {
+  color: var(--dwr-green-dark);
+}
+
+/* ===============================
+   Buttons
+   =============================== */
+
+.btn-primary {
+  background-color: var(--dwr-navy);
+  border-color: var(--dwr-blue-dark);
+  color: var(--dwr-white);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--dwr-blue-dark);
+  border-color: var(--dwr-blue-dark);
+  color: var(--dwr-white);
+}
+
+.btn-outline-primary {
+  background-color: var(--dwr-grey-light) !important;
+  color: var(--dwr-navy) !important;
+  border-color: var(--dwr-grey-light) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  background-color: var(--dwr-blue-dark) !important;
+  border-color: var(--dwr-blue-dark) !important;
+  color: var(--dwr-white) !important;
+}
+
+/* ===============================
+   GitHub icon in navbar
+   =============================== */
+
+.navbar .fa-github {
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.navbar .fa-github:hover {
+  color: var(--dwr-gold);
+}
+
+/* ===============================
+   Reference page
+   =============================== */
+
+/* Description lists (parameter docs) */
+.contents dt {
+  color: var(--dwr-navy);
+  margin-top: 0.75rem;
+}
+
+.contents dd {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+/* Reference index section headings */
+.contents .section h2 {
+  border-bottom: 2px solid var(--dwr-green-light);
+  padding-bottom: 0.5rem;
+}
+
+/* ===============================
+   Cards and tables
+   =============================== */
+
+.card {
+  border-color: var(--dwr-grey-light);
+}
+
+.card-header {
+  background-color: var(--dwr-bg);
+}
+
+.contents table {
+  margin-bottom: 1.5rem;
+}
+
+.contents table td {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* ===============================
+   Code
+   =============================== */
+
+.contents pre {
+  background-color: var(--dwr-bg);
+  border: 1px solid var(--dwr-grey-light);
+  border-radius: 4px;
+}
+
+.contents code {
+  color: var(--dwr-navy);
+}
