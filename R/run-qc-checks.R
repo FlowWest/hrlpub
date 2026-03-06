@@ -9,15 +9,16 @@
 # The invertebrate and carcass survey QC functions have been the least developed
 # and tested. All functions can be improved by handling more edge cases.
 
-library(dplyr)
-library(lubridate)
-library(ggplot2)
-library(tidyr)
+
 
 # MAIN QC DISPATCH FUNCTION
 
 #' @title Run Data Quality Checks Based on Data Type
 #' @description Dispatch function that triggers additional functions based on data type.
+#' @import dplyr
+#' @importFrom lubridate hours
+#' @importFrom tidyr pivot_wider
+#' @importFrom ggplot2 ggplot geom_line geom_point aes scale_color_manual facet_wrap theme_minimal labs
 #' @param data Data frame containing the data to check. Requires specific column names.
 #' Water quality: datetime, parameter, value, site_id; Fish observation: date, site_id, species, count (optional),
 #' fork_length (optional), weight (optional), observer (optional); Carcass survey: date, site_id, survey_period,
@@ -195,14 +196,14 @@ qc_water_quality <- function(data,
   plots <- list()
 
   # Time series with flags
-  plots$timeseries <- ggplot(data %>% left_join(flags, by = c("datetime", "parameter", "value"))) +
-    geom_line(aes(x = datetime, y = value), color = "gray70") +
-    geom_point(aes(x = datetime, y = value, color = flag), size = 1) +
-    scale_color_manual(values = c("PASS" = "darkgreen", "SUSPECT" = "orange", "REJECT" = "red")) +
-    facet_wrap(~parameter, scales = "free_y", ncol = 1) +
-    theme_minimal() +
-    labs(title = "Water Quality Time Series with QC Flags",
-         x = "Date/Time", y = "Value")
+  plots$timeseries <- ggplot2::ggplot(data %>% left_join(flags, by = c("datetime", "parameter", "value"))) +
+    ggplot2::geom_line(ggplot2::aes(x = datetime, y = value), color = "gray70") +
+    ggplot2::geom_point(ggplot2::aes(x = datetime, y = value, color = flag), size = 1) +
+    ggplot2::scale_color_manual(values = c("PASS" = "darkgreen", "SUSPECT" = "orange", "REJECT" = "red")) +
+    ggplot2::facet_wrap(~parameter, scales = "free_y", ncol = 1) +
+    ggplot2::theme_minimal() +
+    ggplot2::labs(title = "Water Quality Time Series with QC Flags",
+                  x = "Date/Time", y = "Value")
 
   return(list(
     flags = flags,
@@ -243,7 +244,7 @@ check_flat_line <- function(data, threshold = 0.1, hours = 4) {
 
   # Rolling SD over time window
   data <- data %>% arrange(datetime)
-  window_size <- max(which(diff(data$datetime) <= hours(hours)))
+  window_size <- max(which(diff(data$datetime) <= lubridate::hours(hours)))
 
   if (window_size >= 3) {
     rolling_sd <- zoo::rollapply(data$value, width = window_size,
@@ -690,7 +691,7 @@ qc_carcass_survey <- function(data) {
     sex_ratio <- data %>%
       filter(!is.na(sex)) %>%
       count(sex) %>%
-      pivot_wider(names_from = sex, values_from = n, values_fill = 0)
+      tidyr::pivot_wider(names_from = sex, values_from = n, values_fill = 0)
 
     if ("M" %in% names(sex_ratio) && "F" %in% names(sex_ratio)) {
       ratio <- sex_ratio$M / sex_ratio$F
@@ -1315,8 +1316,9 @@ qc_chemistry <- function(data) {
 #' @param qc_results List output from run_qc_checks()
 #' @param output_file Path to save report (optional)
 #' @examples
+#' \dontrun{
 #' report <- generate_qc_report(qc)
-#'
+#'}
 #' @export
 generate_qc_report <- function(qc_results, output_file = NULL) {
 
@@ -1350,8 +1352,9 @@ generate_qc_report <- function(qc_results, output_file = NULL) {
 #'
 #' @param qc_results List output from run_qc_checks()
 #' @examples
+#' \dontrun{
 #' print_qc_summary(qc)
-#'
+#'}
 #' @export
 print_qc_summary <- function(qc_results) {
 
@@ -1383,4 +1386,3 @@ print_qc_summary <- function(qc_results) {
 
   cat("\n==================================================\n")
 }
-

@@ -13,6 +13,7 @@ print_qc_summary(qc_results)
 Print QC Summary
 }
 \examples{
+\dontrun{
 print_qc_summary(qc)
-
+}
 }

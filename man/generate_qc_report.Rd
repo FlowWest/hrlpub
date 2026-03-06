@@ -15,6 +15,7 @@ generate_qc_report(qc_results, output_file = NULL)
 Generate QC Report
 }
 \examples{
+\dontrun{
 report <- generate_qc_report(qc)
-
+}
 }
