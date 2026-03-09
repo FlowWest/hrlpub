@@ -35,13 +35,13 @@
 #' Check that the following files in `publish/metadata_templates` have been manually filled
 #' in and are correct and generate any additional files as needed:
 #' abstract.txt
-#' attributes_csv_templates/attributes_csv_template.csv (one per data table)
+#' attributes/attributes_csv_template.csv (one per data table)
 #' custom_units.txt
 #' geographic_coverage.txt
 #' intellectual_rights.txt (DO NOT CHANGE unless using another license)
 #' keywords.txt
 #' methods.docx
-#' personnel.txt
+#' personnel/personnel_csv_template.csv
 #'
 #' This function also assumes that the user has an EDI account and credentials
 #' are stored in their .Renviron as EDI_USER_ID
@@ -81,7 +81,7 @@ make_eml_edi <- function(data_file_names,
 
   # Define paths for your metadata templates, data, and EML
 
-  path_templates <- here("publish", "metadata_templates")
+  path_metadata <- here("publish", "metadata")
   path_data <- here("data", "clean")
   path_eml <- here("publish", "eml")
 
@@ -105,8 +105,8 @@ make_eml_edi <- function(data_file_names,
 
   walk(attributes_file_names, function(file_name) {
     metadata_csv <- read_csv(here(
-      path_templates,
-      "attributes_csv_template",
+      path_metadata,
+      "attributes",
       paste0(file_name)
     ))
 
@@ -115,7 +115,7 @@ make_eml_edi <- function(data_file_names,
     write.table(
       metadata_csv,
       file = here(
-        path_templates,
+        path_metadata,
         paste0(names_without_ext, ".txt")
       ),
       sep = "\t",
@@ -127,13 +127,13 @@ make_eml_edi <- function(data_file_names,
   # Personnel metadata - csv to txt
 
   personnel_csv <- read_csv(here(
-    path_templates,
-    "personnel_csv_template",
+    path_metadata,
+    "personnel",
     "personnel.csv"
   ))
   write.table(
     personnel_csv,
-    file = here(path_templates, "personnel.txt"),
+    file = here(path_metadata, "personnel.txt"),
     sep = "\t",
     row.names = F,
     quote = F
@@ -142,7 +142,7 @@ make_eml_edi <- function(data_file_names,
   # Make EML from metadata templates
 
   EMLassemblyline::make_eml(
-    path = path_templates,
+    path = path_metadata,
     data.path = path_data,
     eml.path = path_eml,
     dataset.title = title,

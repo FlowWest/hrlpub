@@ -45,13 +45,13 @@ This function assumes that all appropriate metadata templates have been complete
 Check that the following files in \code{publish/metadata_templates} have been manually filled
 in and are correct and generate any additional files as needed:
 abstract.txt
-attributes_csv_templates/attributes_csv_template.csv (one per data table)
+attributes/attributes_csv_template.csv (one per data table)
 custom_units.txt
 geographic_coverage.txt
 intellectual_rights.txt (DO NOT CHANGE unless using another license)
 keywords.txt
 methods.docx
-personnel.txt
+personnel/personnel_csv_template.csv
 
 This function also assumes that the user has an EDI account and credentials
 are stored in their .Renviron as EDI_USER_ID
