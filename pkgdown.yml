@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.2.0
 pkgdown_sha: ~
 articles: {}
-last_built: 2026-03-06T00:17Z
+last_built: 2026-03-09T22:59Z
 urls:
   reference: https://flowwest.github.io/hrlpub/reference
   article: https://flowwest.github.io/hrlpub/articles
