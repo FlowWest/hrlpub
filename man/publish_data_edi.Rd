@@ -4,7 +4,12 @@
 \alias{publish_data_edi}
 \title{Publish data package on EDI}
 \usage{
-publish_data_edi(path_eml_file, publish_type, edi_number, publish_environment)
+publish_data_edi(
+  publish_type,
+  edi_number,
+  publish_environment,
+  path_eml_file = here::here("publish", "eml", paste0(edi_number, ".xml"))
+)
 }
 \arguments{
 \item{publish_type}{Indicate whether you are publishing an update to an existing
@@ -17,6 +22,10 @@ the EDI number will be one version greater than the existing package.}
 \item{publish_environment}{Environment where data are being published. Recommended to
 publish on the staging environment first to review the data package and then
 publish to production. Option are: \code{staging}, \code{production}}
+
+\item{path_eml_file}{Path to the EML \code{.xml} file. Defaults to
+\verb{publish/eml/<edi_number>.xml}, which is where \code{\link[=make_eml_edi]{make_eml_edi()}} writes its
+output. Override this argument if your EML file lives elsewhere.}
 }
 \value{
 A message describing if the upload was successful or not.
