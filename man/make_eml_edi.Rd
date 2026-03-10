@@ -8,6 +8,8 @@ make_eml_edi(
   data_file_names,
   attributes_file_names,
   title,
+  table_names,
+  table_descriptions,
   maintenance,
   edi_number
 )
@@ -22,6 +24,10 @@ csv templates. The naming convention for the files should be \code{attributes_NA
 \item{title}{Title of the data publication. The title should be clear, concise,
 and descriptive.}
 
+\item{table_names}{Short descriptive name for the data tables. If there are
+more than one data tables, provide as a vector of character strings. This needs
+to be in the same order as the data_file_names. This is an optional.}
+
 \item{maintenance}{This describes how often the data publication will be updated.
 The options are: \code{daily}, \code{weekly}, \code{monthly}, \code{annually}, \code{complete}.}
 
@@ -31,6 +37,10 @@ For instance, if the existing EDI package is \code{edi.1234.1} then the you shou
 input \code{edi.1234.2} because you are creating the EML for the next version.
 If this is for a new package, please reserve a new EDI number. Refer to the
 \href{https://lucy-dwr.github.io/hrl-docs/quickstart/publish-to-edi.html}{Quickstart Guide}.}
+
+\item{table_description}{Description of the data table to help users understand
+what each data table contains. This needs to be in the same order as the data_file_names.
+This is an optional.}
 }
 \value{
 An EML file within \code{data-raw/eml}. EMLassemblyline will include messages
@@ -61,6 +71,8 @@ are stored in their .Renviron as EDI_USER_ID
 make_eml_edi(data_file_names = c("microhabitat_observations.csv","survey_locations.csv"),
              attributes_file_names = c("attributes_microhabitat_observations.csv","attributes_survey_locations.csv"),
              title = "Distribution and habitat use of juvenile steelhead and other fishes of the lower Feather River",
+             table_names = c("Microhabitat Observations", "Survey Location Metadata"),
+             table_descriptions = c("Primary data table with observations of microhabitat characteristics", "Description of the locations surveyed"),
              maintenance = "complete",
              edi_number = "edi.test")
 }

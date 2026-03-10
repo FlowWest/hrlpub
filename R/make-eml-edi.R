@@ -16,6 +16,14 @@
 #' @param title Title of the data publication. The title should be clear, concise,
 #' and descriptive.
 #'
+#' @param table_names Short descriptive name for the data tables. If there are
+#' more than one data tables, provide as a vector of character strings. This needs
+#' to be in the same order as the data_file_names. This is an optional.
+#'
+#' @param table_description Description of the data table to help users understand
+#' what each data table contains. This needs to be in the same order as the data_file_names.
+#' This is an optional.
+#'
 #' @param maintenance This describes how often the data publication will be updated.
 #' The options are: `daily`, `weekly`, `monthly`, `annually`, `complete`.
 #'
@@ -52,16 +60,20 @@
 #' make_eml_edi(data_file_names = c("microhabitat_observations.csv","survey_locations.csv"),
 #'              attributes_file_names = c("attributes_microhabitat_observations.csv","attributes_survey_locations.csv"),
 #'              title = "Distribution and habitat use of juvenile steelhead and other fishes of the lower Feather River",
+#'              table_names = c("Microhabitat Observations", "Survey Location Metadata"),
+#'              table_descriptions = c("Primary data table with observations of microhabitat characteristics", "Description of the locations surveyed"),
 #'              maintenance = "complete",
 #'              edi_number = "edi.test")
 #'}
 #'
 #' @export
 make_eml_edi <- function(data_file_names,
-                              attributes_file_names,
-                              title,
-                              maintenance,
-                              edi_number) {
+                         attributes_file_names,
+                         title,
+                         table_names,
+                         table_descriptions,
+                         maintenance,
+                         edi_number) {
   if (missing(data_file_names)) {
     stop("The 'data_file_names' argument is required.", call. = FALSE)
   }
@@ -104,20 +116,13 @@ make_eml_edi <- function(data_file_names,
   # It is easier to fill in the data dictionaries as csv and then translate to .txt file
 
   walk(attributes_file_names, function(file_name) {
-    metadata_csv <- read_csv(here(
-      path_metadata,
-      "attributes",
-      paste0(file_name)
-    ))
+    metadata_csv <- read_csv(here(path_metadata, "attributes", paste0(file_name)))
 
     names_without_ext <- sub("\\.[^.]*$", "", file_name)
 
     write.table(
       metadata_csv,
-      file = here(
-        path_metadata,
-        paste0(names_without_ext, ".txt")
-      ),
+      file = here(path_metadata, paste0(names_without_ext, ".txt")),
       sep = "\t",
       row.names = FALSE,
       quote = FALSE
@@ -126,11 +131,7 @@ make_eml_edi <- function(data_file_names,
 
   # Personnel metadata - csv to txt
 
-  personnel_csv <- read_csv(here(
-    path_metadata,
-    "personnel",
-    "personnel.csv"
-  ))
+  personnel_csv <- read_csv(here(path_metadata, "personnel", "personnel.csv"))
   write.table(
     personnel_csv,
     file = here(path_metadata, "personnel.txt"),
@@ -149,6 +150,8 @@ make_eml_edi <- function(data_file_names,
     temporal.coverage = c(start_date, end_date),
     maintenance.description = maintenance,
     data.table = data_file_names,
+    data.table.name = table_names,
+    data.table.description = table_descriptions,
     user.id = Sys.getenv("EDI_USER_ID"),
     user.domain = "EDI",
     package.id = edi_number
