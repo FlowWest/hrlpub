@@ -11,7 +11,8 @@ Imports:
     lubridate,
     purrr,
     readr,
-    tidyr
+    tidyr,
+    stringr
 Remotes:
     EDIorg/EMLassemblyline,
     FlowWest/EMLaide
