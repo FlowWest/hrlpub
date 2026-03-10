@@ -1,2 +1,8 @@
 name	name_type	name_resolved	authority_system	authority_id
-Chinook common  Chinook ITIS  161980
+chinook salmon common  Oncorhynchus tshawytscha ITIS  161980
+steelhead trout (wild) common  Oncorhynchus mykiss ITIS  161989
+steelhead trout (clipped) common  Oncorhynchus mykiss ITIS  161989
+speckled dace common  Rhinichthys osculus ITIS  163387
+sacramento pikeminnow common  Ptychocheilus grandis ITIS  163524
+tule perch  common  Hysterocarpus traskii  ITIS  553322
+

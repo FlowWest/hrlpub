@@ -156,4 +156,6 @@ make_eml_edi <- function(data_file_names,
     user.domain = "EDI",
     package.id = edi_number
   )
+
+  print("If issues are found, use EMLassemblyline::issues() for more information.")
 }

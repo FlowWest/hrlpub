@@ -1,3 +1,4 @@
 givenName	middleInitial	surName	organizationName	electronicMailAddress	userId	role	projectTitle	fundingAgency	fundingNumber
 Ryon	NA	Kurth	California Department of Water Resources	Ryon.Kurth@water.ca.gov	NA	creator	NA	NA	NA
 Ryon	NA	Kurth	California Department of Water Resources	Ryon.Kurth@water.ca.gov	NA	contact	NA	NA	NA
+Ryon	NA	Kurth	California Department of Water Resources	Ryon.Kurth@water.ca.gov	NA	PI	NA	California Department of Water Resources	NA
