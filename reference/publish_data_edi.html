@@ -52,7 +52,12 @@ request to EDI.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">publish_data_edi</span><span class="op">(</span><span class="va">path_eml_file</span>, <span class="va">publish_type</span>, <span class="va">edi_number</span>, <span class="va">publish_environment</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">publish_data_edi</span><span class="op">(</span></span>
+<span>  <span class="va">publish_type</span>,</span>
+<span>  <span class="va">edi_number</span>,</span>
+<span>  <span class="va">publish_environment</span>,</span>
+<span>  path_eml_file <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org/reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="st">"publish"</span>, <span class="st">"eml"</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">edi_number</span>, <span class="st">".xml"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -74,6 +79,12 @@ the EDI number will be one version greater than the existing package.</p></dd>
 <dd><p>Environment where data are being published. Recommended to
 publish on the staging environment first to review the data package and then
 publish to production. Option are: <code>staging</code>, <code>production</code></p></dd>
+
+
+<dt id="arg-path-eml-file">path_eml_file<a class="anchor" aria-label="anchor" href="#arg-path-eml-file"></a></dt>
+<dd><p>Path to the EML <code>.xml</code> file. Defaults to
+<code>publish/eml/&lt;edi_number&gt;.xml</code>, which is where <code><a href="make_eml_edi.html">make_eml_edi()</a></code> writes its
+output. Override this argument if your EML file lives elsewhere.</p></dd>
 
 </dl></div>
     <div id="value">
