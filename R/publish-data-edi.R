@@ -36,7 +36,7 @@ publish_data_edi <- function(publish_type, edi_number, publish_environment,
     parts[length(parts)] <- as.character(as.numeric(parts[length(parts)]) - 1)
     existing_edi_number <- paste(parts, collapse = ".")
 
-    update_edi_package(
+    EMLaide::update_edi_package(
       user_id = Sys.getenv("EDI_USER_ID"),
       password = Sys.getenv("EDI_PASSWORD"),
       existing_package_identifier = existing_edi_number,
@@ -44,7 +44,7 @@ publish_data_edi <- function(publish_type, edi_number, publish_environment,
       environment = publish_environment
     )
   } else if (publish_type == "new") {
-    upload_edi_package(
+    EMLaide::upload_edi_package(
       user_id = Sys.getenv("EDI_USER_ID"),
       password = Sys.getenv("EDI_PASSWORD"),
       eml_file_path = path_eml_file,
