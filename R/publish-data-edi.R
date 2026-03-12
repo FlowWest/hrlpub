@@ -21,15 +21,18 @@
 #' publish on the staging environment first to review the data package and then
 #' publish to production. Option are: `staging`, `production`
 #'
+#' @param path_eml_file Path to the EML `.xml` file. Defaults to
+#' `publish/eml/<edi_number>.xml`, which is where [make_eml_edi()] writes its
+#' output. Override this argument if your EML file lives elsewhere.
+#'
 #' @return A message describing if the upload was successful or not.
 #'
 #' @export
-publish_data_edi <- function(path_eml_file, publish_type, edi_number, publish_environment) {
-
-  path_eml_file <- here("data-raw", "eml", paste0(edi_number, ".xml")) # Created using make-metadata-eml.R
+publish_data_edi <- function(publish_type, edi_number, publish_environment,
+                             path_eml_file = here::here("publish", "eml", paste0(edi_number, ".xml"))) {
 
   if (publish_type == "update") {
-    parts <- str_split(edi_number, "\\.")[[1]]
+    parts <- stringr::str_split(edi_number, "\\.")[[1]]
     parts[length(parts)] <- as.character(as.numeric(parts[length(parts)]) - 1)
     existing_edi_number <- paste(parts, collapse = ".")
 
