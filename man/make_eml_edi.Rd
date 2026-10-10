@@ -59,7 +59,7 @@ attributes/attributes_csv_template.csv (one per data table)
 custom_units.txt
 geographic_coverage.txt
 intellectual_rights.txt (DO NOT CHANGE unless using another license)
-keywords.txt
+keywords/keywords_csv_template.csv
 methods.docx
 personnel/personnel_csv_template.csv
 
