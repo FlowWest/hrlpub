@@ -47,7 +47,7 @@
 #' custom_units.txt
 #' geographic_coverage.txt
 #' intellectual_rights.txt (DO NOT CHANGE unless using another license)
-#' keywords.txt
+#' keywords/keywords_csv_template.csv
 #' methods.docx
 #' personnel/personnel_csv_template.csv
 #'
@@ -135,6 +135,17 @@ make_eml_edi <- function(data_file_names,
   write.table(
     personnel_csv,
     file = here(path_metadata, "personnel.txt"),
+    sep = "\t",
+    row.names = F,
+    quote = F
+  )
+
+  # Keywords metadata - csv to txt
+
+  keywords_csv <- read_csv(here(path_metadata, "keywords", "keywords.csv"))
+  write.table(
+    keywords_csv,
+    file = here(path_metadata, "keywords.txt"),
     sep = "\t",
     row.names = F,
     quote = F
